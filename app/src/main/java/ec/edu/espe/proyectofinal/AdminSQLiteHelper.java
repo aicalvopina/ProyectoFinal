@@ -18,7 +18,7 @@ public class AdminSQLiteHelper extends SQLiteOpenHelper {
             "tipo_ciudadano TEXT)";
 
     String sqlCreate2 = "CREATE TABLE ciudadano (" +
-            "codigo_ciudadano NOT NULL INTEGER PRIMARY KEY AUTOINCREMENT," +
+            "codigo_ciudadano INTEGER PRIMARY KEY ," +
             "ci TEXT, " +
             "cod_tciudadano INTEGER, " +
             "nombres TEXT," +
@@ -27,34 +27,34 @@ public class AdminSQLiteHelper extends SQLiteOpenHelper {
             "FOREIGN KEY(cod_tciudadano) REFERENCES tipo_ciudadano(cod_tciudadano) )";
 
     String sqlCreate3=  "CREATE TABLE tipo_competencia (" +
-            "cod_tcompetencia NOT NULL INTEGER PRIMARY KEY AUTOINCREMENT, " +
+            "cod_tcompetencia INTEGER PRIMARY KEY , " +
             "tipo_competencia TEXT)";
 
     String sqlCreate4 = "CREATE TABLE competencia (" +
-            "codigo NOT NULL INTEGER PRIMARY KEY, " +
+            "codigo INTEGER PRIMARY KEY, " +
             "cod_tcompetencia  INTEGER," +
             "titulo TEXT, " +
             "FOREIGN KEY(cod_tciudadano) REFERENCES tipo_competencia(cod_tcompetencia) )";
 
     String sqlCreate5 = "CREATE TABLE tipo_organizacion (" +
-            "codigo_torganizacion NOT NULL INTEGER PRIMARY KEY AUTOINCREMENT," +
+            "codigo_torganizacion INTEGER PRIMARY KEY ," +
             "tipo_organizacion TEXT)";
 
     String sqlCreate6 = "CREATE TABLE organizacion (" +
-            "codigo_organizacion NOT NULL INTEGER PRIMARY KEY AUTOINCREMENT," +
+            "codigo_organizacion INTEGER PRIMARY KEY ," +
             "nombre TEXT," +
             "RUC  TEXT," +
             "cod_torganizacion INTEGER," +
             "FOREIGN KEY(cod_torganizacion) REFERENCES tipo_organizacion(cod_torganizacion))";
 
     String sqlCreate7 = "CREATE TABLE inscripcionCNE (" +
-            "codigo_inscripcion NOT NULL INTEGER PRIMARY KEY AUTOINCREMENT," +
+            "codigo_inscripcion INTEGER PRIMARY KEY ," +
             "competencia INTEGER," +
             "titulo INTEGER," +
             "FOREIGN KEY(competencia) REFERENCES competencia(cod_competencia))";
 
     String sqlCreate8 = "CREATE TABLE periodo (" +
-            "codigo_periodo NOT NULL INTEGER PRIMARY KEY AUTOINCREMENT," +
+            "codigo_periodo INTEGER PRIMARY KEY ," +
             "fechas TEXT)";
 
     public AdminSQLiteHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
