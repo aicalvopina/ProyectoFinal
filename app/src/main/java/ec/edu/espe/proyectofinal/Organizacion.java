@@ -1,5 +1,6 @@
 package ec.edu.espe.proyectofinal;
 
+import android.app.Activity;
 import android.content.ContentValues;
 import android.content.Intent;
 import android.database.Cursor;
@@ -9,6 +10,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import java.io.IOException;
+import java.io.OutputStreamWriter;
 
 public class Organizacion extends AppCompatActivity {
     private EditText et1,et2,et3,txtCodOrg;
@@ -40,6 +44,17 @@ public class Organizacion extends AppCompatActivity {
         et1.setText("");
         et2.setText("");
         et3.setText("");
+        try {
+            OutputStreamWriter archivo = new OutputStreamWriter(openFileOutput(
+                    "organizacion.txt", Activity.MODE_APPEND));
+            archivo.append("nombre:"+nombre);
+            archivo.write("\n");
+            archivo.append("RUC:"+RUC);
+            archivo.write("\n");
+            archivo.flush();
+            archivo.close();
+        } catch (IOException e) {
+        }
         Toast.makeText(this, "Se cargaron los datos del organizacion",
                 Toast.LENGTH_SHORT).show();
     }

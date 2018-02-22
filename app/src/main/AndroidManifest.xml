@@ -23,7 +23,7 @@
         <activity android:name=".TOrganisacion" />
         <activity android:name=".Organizacion" />
         <activity android:name=".IncripcionCNE" />
-        <activity android:name=".Periodo"></activity>
+        <activity android:name=".Periodo" />
     </application>
 
 </manifest>

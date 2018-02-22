@@ -1,5 +1,6 @@
 package ec.edu.espe.proyectofinal;
 
+import android.app.Activity;
 import android.content.ContentValues;
 import android.content.Intent;
 import android.database.Cursor;
@@ -9,6 +10,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import java.io.IOException;
+import java.io.OutputStreamWriter;
 
 public class InscripcionCNE extends AppCompatActivity {
     private EditText et1,et2,et5;
@@ -36,6 +40,17 @@ public class InscripcionCNE extends AppCompatActivity {
         et1.setText("");
         et2.setText("");
         et5.setText("");
+        try {
+            OutputStreamWriter archivo = new OutputStreamWriter(openFileOutput(
+                    "incripcion.txt", Activity.MODE_APPEND));
+            archivo.append("titulo:"+titulo);
+            archivo.write("\n");
+            archivo.append("competencia:"+competencia);
+            archivo.write("\n");
+            archivo.flush();
+            archivo.close();
+        } catch (IOException e) {
+        }
         Toast.makeText(this, "Se cargaron los datos del inscripcionCNE",
                 Toast.LENGTH_SHORT).show();
     }

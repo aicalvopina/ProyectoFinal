@@ -1,5 +1,6 @@
 package ec.edu.espe.proyectofinal;
 
+import android.app.Activity;
 import android.content.ContentValues;
 import android.content.Intent;
 import android.database.Cursor;
@@ -9,6 +10,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import java.io.IOException;
+import java.io.OutputStreamWriter;
 
 public class Ciudadano extends AppCompatActivity {
     private EditText et1,et2,et3,et4,et5;
@@ -35,7 +39,7 @@ public class Ciudadano extends AppCompatActivity {
         String nacionalidad = et5.getText().toString();
         ContentValues registro = new ContentValues();
         registro.put("ci", ci);
-        registro.put("cod_tcompetencia", cod_tciudadano);
+        registro.put("cod_tciudadano", cod_tciudadano);
         registro.put("nombres", nombres);
         registro.put("apellidos", apellidos);
         registro.put("nacionalidad", nacionalidad);
@@ -46,6 +50,23 @@ public class Ciudadano extends AppCompatActivity {
         et3.setText("");
         et4.setText("");
         et5.setText("");
+        try {
+            OutputStreamWriter archivo = new OutputStreamWriter(openFileOutput(
+                    "ciudadanos.txt", Activity.MODE_APPEND));
+            archivo.append("CI:"+ci);
+            archivo.write("\n");
+            archivo.append("cod_tciudadano:"+cod_tciudadano);
+            archivo.write("\n");
+            archivo.append("Nombres:"+nombres);
+            archivo.write("\n");
+            archivo.append("Apellidos:"+apellidos);
+            archivo.write("\n");
+            archivo.append("Nacionalidad:"+nacionalidad);
+            archivo.write("\n");
+            archivo.flush();
+            archivo.close();
+        } catch (IOException e) {
+        }
         Toast.makeText(this, "Se cargaron los datos del ciudadano",
                 Toast.LENGTH_SHORT).show();
     }
@@ -118,4 +139,5 @@ public class Ciudadano extends AppCompatActivity {
         startActivity(i);
         finish();
     }
+
 }
