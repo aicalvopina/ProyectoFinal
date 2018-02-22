@@ -30,7 +30,6 @@ public class AdminSQLiteHelper extends SQLiteOpenHelper {
     String sqlCreate4 = "CREATE TABLE competencia (" +
             "codigo NOT NULL INTEGER PRIMARY KEY, " +
             "cod_tcompetencia  INTEGER," +
-            "tipo_competencia INTEGER, " +
             "titulo TEXT, " +
             "FOREIGN KEY(cod_tciudadano) REFERENCES tipo_competencia(cod_tcompetencia) )";
 

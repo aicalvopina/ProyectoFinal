@@ -4,6 +4,131 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="ec.edu.espe.proyectofinal.Cuidadano">
+    tools:context="ec.edu.espe.proyectofinal.Ciudadano">
 
+    <RelativeLayout
+        android:layout_width="368dp"
+        android:layout_height="495dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="              CIUDADANO"
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
+        <EditText
+            android:id="@+id/etCodigo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="45dp"
+            android:layout_marginStart="45dp"
+            android:layout_marginTop="40dp"
+            android:ems="10"
+            android:inputType="number"
+            android:text="Cedula" />
+
+        <EditText
+            android:id="@+id/etTCompetencia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/etCodigo"
+            android:layout_below="@+id/etCodigo"
+            android:ems="10"
+            android:inputType="number"
+            android:text="Codigo de tipo ciudadano" />
+
+        <EditText
+            android:id="@+id/etNombre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/etTCompetencia"
+            android:layout_below="@+id/etTCompetencia"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="Nombres" />
+
+        <EditText
+            android:id="@+id/etApellido"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/etNombre"
+            android:layout_below="@+id/etNombre"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="Apellidos" />
+
+        <EditText
+            android:id="@+id/etNacionalidad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/etApellido"
+            android:layout_below="@+id/etApellido"
+            android:ems="10"
+            android:inputType="text|textShortMessage|textPersonName"
+            android:text="Nacionalidad" />
+
+        <Button
+            android:id="@+id/btnAlta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/btnBaja"
+            android:layout_alignStart="@+id/etNombre"
+            android:layout_below="@+id/etNombre"
+            android:layout_marginTop="120dp"
+            android:onClick="altaciudadano"
+            android:text="Alta" />
+
+        <Button
+            android:id="@+id/btnCodigo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/btnModifica"
+            android:layout_alignStart="@+id/btnModifica"
+            android:layout_below="@+id/btnModifica"
+            android:onClick="consultaporci"
+            android:text="Consulta por cedula" />
+
+        <Button
+            android:id="@+id/btnBaja"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/etTCompetencia"
+            android:layout_alignStart="@+id/etTCompetencia"
+            android:layout_below="@+id/btnAlta"
+            android:onClick="bajaporci"
+            android:text="Baja por cedula" />
+
+
+        <Button
+            android:id="@+id/btnModifica"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/etTCompetencia"
+            android:layout_alignStart="@+id/btnBaja"
+            android:layout_below="@+id/btnBaja"
+            android:onClick="modificacion"
+            android:text="Modificion" />
+
+        <Button
+            android:id="@+id/btnRegresar"
+            style="@style/Widget.AppCompat.Button.ButtonBar.AlertDialog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:drawableBottom="@drawable/ic_launcher_background"
+            android:onClick="regresar"
+            tools:drawableBottom="@android:drawable/ic_menu_revert" />
+
+    </RelativeLayout>
 </android.support.constraint.ConstraintLayout>

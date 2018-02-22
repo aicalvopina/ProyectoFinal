@@ -6,4 +6,112 @@
     android:layout_height="match_parent"
     tools:context="ec.edu.espe.proyectofinal.Competencia">
 
+    <RelativeLayout
+        android:layout_width="368dp"
+        android:layout_height="495dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="              COMPETENCIA"
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
+
+        <EditText
+            android:id="@+id/etCodigo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="45dp"
+            android:layout_marginStart="45dp"
+            android:layout_marginTop="70dp"
+            android:ems="10"
+            android:inputType="number"
+            android:text="Codigo" />
+
+        <EditText
+            android:id="@+id/etTCompetencia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/etCodigo"
+            android:layout_alignStart="@+id/etCodigo"
+            android:layout_below="@+id/etCodigo"
+            android:ems="10"
+            android:inputType="number"
+            android:text="Codigo tipo de competencia" />
+
+        <EditText
+            android:id="@+id/etTitulo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/etTCompetencia"
+            android:layout_alignStart="@+id/etTCompetencia"
+            android:layout_below="@+id/etTCompetencia"
+            android:ems="10"
+            android:inputType="text"
+            android:text="Titulo" />
+
+        <Button
+            android:id="@+id/btnAlta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/btnBaja"
+            android:layout_alignStart="@+id/etTitulo"
+            android:layout_below="@+id/etTitulo"
+            android:layout_marginTop="60dp"
+            android:onClick="altacompetencia"
+            android:text="Alta" />
+
+        <Button
+            android:id="@+id/btnCodigo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/btnModifica"
+            android:layout_alignStart="@+id/btnModifica"
+            android:layout_below="@+id/btnModifica"
+            android:onClick="consultaporcodigo"
+            android:text="Consulta por codigo" />
+
+        <Button
+            android:id="@+id/btnBaja"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/etTCompetencia"
+            android:layout_alignStart="@+id/etTCompetencia"
+            android:layout_below="@+id/btnAlta"
+            android:onClick="bajaporcodigo"
+            android:text="Baja por codigo" />
+
+
+        <Button
+            android:id="@+id/btnModifica"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/etTCompetencia"
+            android:layout_alignStart="@+id/btnBaja"
+            android:layout_below="@+id/btnBaja"
+            android:onClick="modificacion"
+            android:text="Modificion" />
+
+        <Button
+            android:id="@+id/btnRegresar"
+            style="@style/Widget.AppCompat.Button.ButtonBar.AlertDialog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:drawableBottom="@drawable/ic_launcher_background"
+            android:onClick="regresar"
+            tools:drawableBottom="@android:drawable/ic_menu_revert" />
+    </RelativeLayout>
 </android.support.constraint.ConstraintLayout>
