@@ -7,10 +7,11 @@ import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class TCiudadano extends AppCompatActivity {
+public class TCiudadano extends AppCompatActivity implements View.OnClickListener {
     private EditText txtCodigo;
     private EditText txtTipoCiudadano;
     AdminSQLiteHelper admin;
@@ -22,6 +23,8 @@ public class TCiudadano extends AppCompatActivity {
         setContentView(R.layout.activity_tciudadano);
         txtCodigo=(EditText)findViewById(R.id.txtCodTipoCiudadano1);
         txtTipoCiudadano = (EditText)findViewById(R.id.txtTipoCiudadano1);
+        Button btnAlta = (Button)findViewById(R.id.button21);
+        btnAlta.setOnClickListener(this);
 
     }
 
@@ -29,13 +32,14 @@ public class TCiudadano extends AppCompatActivity {
         admin = new AdminSQLiteHelper(this,"Usuarios", null, 1);
         bd = admin.getWritableDatabase();
         String tipo = txtTipoCiudadano.getText().toString();
-        int codigo = Integer.getInteger(txtCodigo.getText().toString());
+        int codigo = Integer.parseInt(txtCodigo.getText().toString());
         /*ContentValues registro = new ContentValues();
         registro.put("tipo_ciudadano", tipo);
        bd.insert("tipo_ciudadano", null, registro);*/
         bd.execSQL("INSERT INTO tipo_ciudadano (cod_tciudadano,tipo_ciudadano ) VALUES ("+ codigo +",'"+txtTipoCiudadano.getText().toString()+"')");
         bd.close();
         txtTipoCiudadano.setText("");
+        txtCodigo.setText("");
         /*try {
             OutputStreamWriter archivo = new OutputStreamWriter(openFileOutput(
                     "TipoCiudadano.txt", Activity.MODE_APPEND));
@@ -55,9 +59,10 @@ public class TCiudadano extends AppCompatActivity {
         SQLiteDatabase bd = admin.getWritableDatabase();
         String tipo_ciudadano = txtCodigo.getText().toString();
         Cursor fila = bd.rawQuery(
-                "select tipo_ciudadano from tipo_ciudadano where tipo_ciudadano =" + tipo_ciudadano, null);
+                "select cod_tciudadano,tipo_ciudadano from tipo_ciudadano where cod_tciudadano =" + Integer.parseInt(tipo_ciudadano), null);
         if (fila.moveToFirst()) {
-
+            txtCodigo.setText(fila.getString(0));
+            txtTipoCiudadano.setText(fila.getString(1));
         } else
             Toast.makeText(this, "No existe un ciudadano con dicho código",
                     Toast.LENGTH_SHORT).show();
@@ -101,5 +106,10 @@ public class TCiudadano extends AppCompatActivity {
         Intent i = new Intent(this,MainActivity.class);
         startActivity(i);
         finish();
+    }
+
+    @Override
+    public void onClick(View v) {
+        alta(v);
     }
 }
