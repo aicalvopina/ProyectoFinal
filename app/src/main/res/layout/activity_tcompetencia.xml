@@ -32,7 +32,7 @@
         tools:drawableBottom="@android:drawable/ic_menu_revert" />
 
     <EditText
-        android:id="@+id/editText11"
+        android:id="@+id/txtCodCompetencia"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="85dp"
@@ -46,7 +46,7 @@
         app:layout_constraintTop_toBottomOf="@+id/txt" />
 
     <EditText
-        android:id="@+id/editText12"
+        android:id="@+id/etTipoCompetencia"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="85dp"
@@ -57,7 +57,7 @@
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText11" />
+        app:layout_constraintTop_toBottomOf="@+id/txtCodCompetencia" />
 
     <Button
         android:id="@+id/button25"
@@ -68,7 +68,7 @@
         android:onClick="alta"
         android:text="Alta"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText12" />
+        app:layout_constraintTop_toBottomOf="@+id/etTipoCompetencia" />
 
     <Button
         android:id="@+id/button26"
@@ -101,6 +101,6 @@
         android:onClick="consultaporcodigo"
         android:text="Busqueda por codigo"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText12" />
+        app:layout_constraintTop_toBottomOf="@+id/etTipoCompetencia" />
 
 </android.support.constraint.ConstraintLayout>

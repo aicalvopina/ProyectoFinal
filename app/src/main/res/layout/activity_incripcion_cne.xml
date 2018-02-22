@@ -39,7 +39,7 @@
             android:text="Codigo" />
 
         <EditText
-            android:id="@+id/etTCompetencia"
+            android:id="@+id/txtCodCompetencia"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignLeft="@+id/txtCodigoIncripcion"
@@ -53,9 +53,9 @@
             android:id="@+id/etTitulo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/etTCompetencia"
-            android:layout_alignStart="@+id/etTCompetencia"
-            android:layout_below="@+id/etTCompetencia"
+            android:layout_alignLeft="@+id/txtCodCompetencia"
+            android:layout_alignStart="@+id/txtCodCompetencia"
+            android:layout_below="@+id/txtCodCompetencia"
             android:ems="10"
             android:inputType="text"
             android:text="Titulo" />
@@ -85,8 +85,8 @@
             android:id="@+id/btnBaja"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignEnd="@+id/etTCompetencia"
-            android:layout_alignStart="@+id/etTCompetencia"
+            android:layout_alignEnd="@+id/txtCodCompetencia"
+            android:layout_alignStart="@+id/txtCodCompetencia"
             android:layout_below="@+id/btnAlta"
             android:onClick="bajaporcodigo"
             android:text="Baja por codigo" />
@@ -96,7 +96,7 @@
             android:id="@+id/btnModifica"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignEnd="@+id/etTCompetencia"
+            android:layout_alignEnd="@+id/txtCodCompetencia"
             android:layout_alignStart="@+id/btnBaja"
             android:layout_below="@+id/btnBaja"
             android:onClick="modificacion"

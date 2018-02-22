@@ -17,7 +17,7 @@ public class Ciudadano extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cuidadano);
         et1=(EditText)findViewById(R.id.txtCodigoIncripcion);
-        et2=(EditText)findViewById(R.id.etTCompetencia);
+        et2=(EditText)findViewById(R.id.txtCodCompetencia);
         et3=(EditText)findViewById(R.id.etTitulo);
         et4=(EditText)findViewById(R.id.etTitulo);
         et5=(EditText)findViewById(R.id.etTitulo);
