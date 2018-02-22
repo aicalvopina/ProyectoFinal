@@ -42,7 +42,7 @@ public class InscripcionCNE extends AppCompatActivity {
         et5.setText("");
         try {
             OutputStreamWriter archivo = new OutputStreamWriter(openFileOutput(
-                    "incripcion.txt", Activity.MODE_APPEND));
+                    "inscripcion.txt", Activity.MODE_APPEND));
             archivo.append("titulo:"+titulo);
             archivo.write("\n");
             archivo.append("competencia:"+competencia);

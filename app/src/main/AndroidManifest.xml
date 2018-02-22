@@ -24,6 +24,7 @@
         <activity android:name=".Organizacion" />
         <activity android:name=".IncripcionCNE" />
         <activity android:name=".Periodo" />
+        <activity android:name=".Explorador"></activity>
     </application>
 
 </manifest>
