@@ -16,11 +16,12 @@ public class InscripcionCNE extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_incripcion_cne);
-        et1=(EditText)findViewById(R.id.etOrganizacion);
+
+       /et1=(EditText)findViewById(R.id.etOrganizacion);
         et2=(EditText)findViewById(R.id.etRepresentante);
         et3=(EditText)findViewById(R.id.etVeedor);
         et4=(EditText)findViewById(R.id.etPeriodo);
-        et5=(EditText)findViewById(R.id.etFecha);
+        et5=(EditText)findViewById(R.id.etFecha);*/
     }
 
     public void alta(View v) {

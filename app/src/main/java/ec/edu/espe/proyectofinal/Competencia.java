@@ -16,7 +16,7 @@ public class Competencia extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_competencia);
-        et1=(EditText)findViewById(R.id.etCodigo);
+        et1=(EditText)findViewById(R.id.txtCodigoIncripcion);
         et2=(EditText)findViewById(R.id.etTCompetencia);
         et3=(EditText)findViewById(R.id.etTitulo);
     }

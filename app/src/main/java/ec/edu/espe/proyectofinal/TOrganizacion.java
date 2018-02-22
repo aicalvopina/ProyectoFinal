@@ -16,7 +16,7 @@ public class TOrganizacion extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_torganisacion);
-        et1 = (EditText) findViewById(R.id.etTipoOrganizacion);
+        //et1 = (EditText) findViewById(R.id.txtCodTipo);
     }
 
     public void alta(View v) {

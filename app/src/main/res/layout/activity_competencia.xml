@@ -19,14 +19,14 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/txt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="              COMPETENCIA"
             android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
 
         <EditText
-            android:id="@+id/etCodigo"
+            android:id="@+id/txtCodigoIncripcion"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
@@ -43,9 +43,9 @@
             android:id="@+id/etTCompetencia"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/etCodigo"
-            android:layout_alignStart="@+id/etCodigo"
-            android:layout_below="@+id/etCodigo"
+            android:layout_alignLeft="@+id/txtCodigoIncripcion"
+            android:layout_alignStart="@+id/txtCodigoIncripcion"
+            android:layout_below="@+id/txtCodigoIncripcion"
             android:ems="10"
             android:inputType="number"
             android:text="Codigo tipo de competencia" />

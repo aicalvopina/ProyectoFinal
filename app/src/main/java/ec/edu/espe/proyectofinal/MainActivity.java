@@ -5,7 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
-import grupo3.participacionciudadanaseleccion.R;
+
 
 public class MainActivity extends AppCompatActivity {
     Intent i;

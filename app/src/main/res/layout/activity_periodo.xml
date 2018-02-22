@@ -7,7 +7,7 @@
     tools:context="ec.edu.espe.proyectofinal.Periodo">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/txt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="PERIODO"
@@ -33,7 +33,7 @@
         tools:drawableBottom="@android:drawable/ic_menu_revert" />
 
     <EditText
-        android:id="@+id/editText7"
+        android:id="@+id/txtCodPeriodo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="85dp"
@@ -41,13 +41,13 @@
         android:layout_marginTop="42dp"
         android:ems="10"
         android:hint="Codigo Periodo"
-        android:inputType="textPersonName"
+        android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/txt" />
 
     <EditText
-        android:id="@+id/editText8"
+        android:id="@+id/txtFecha"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="85dp"
@@ -58,7 +58,7 @@
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText7" />
+        app:layout_constraintTop_toBottomOf="@+id/txtCodPeriodo" />
 
     <Button
         android:id="@+id/button17"
@@ -66,9 +66,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="40dp"
+        android:onClick="alta"
         android:text="Alta"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText8" />
+        app:layout_constraintTop_toBottomOf="@+id/txtFecha" />
 
     <Button
         android:id="@+id/button18"
@@ -76,6 +77,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="20dp"
+        android:onClick="consultaporcodigo"
         android:text="Eliminacion por Codigo"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button19" />
@@ -86,6 +88,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="48dp"
+        android:onClick="modificacion"
         android:text="Modificacion por Codigo"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button17" />
@@ -96,8 +99,9 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="32dp"
         android:layout_marginTop="40dp"
+        android:onClick="consultaporcodigo"
         android:text="Busqueda por Codigo"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText8" />
+        app:layout_constraintTop_toBottomOf="@+id/txtFecha" />
 
 </android.support.constraint.ConstraintLayout>

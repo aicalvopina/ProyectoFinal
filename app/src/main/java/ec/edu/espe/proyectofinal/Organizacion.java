@@ -11,14 +11,16 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 public class Organizacion extends AppCompatActivity {
-    private EditText et1,et2,et3;
+    private EditText et1,et2,et3,txtCodOrg;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_organizacion);
-        et1=(EditText)findViewById(R.id.etNombre);
-        et2=(EditText)findViewById(R.id.etRUC);
-        et3=(EditText)findViewById(R.id.etCodigoTOrganizacion);
+
+        txtCodOrg = (EditText)findViewById(R.id.txtCodOrg);
+        et1=(EditText)findViewById(R.id.txtNombreOrg);
+        et2=(EditText)findViewById(R.id.txtRUC);
+        et3=(EditText)findViewById(R.id.txtCodTipoOrg);
     }
 
 

@@ -11,24 +11,29 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 public class TCiudadano extends AppCompatActivity {
-    private EditText et1;
+    private EditText txtCodigo;
+    private EditText txtTipoCiudadano;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tciudadano);
-        et1=(EditText)findViewById(R.id.etTipoCiudadano);
+        txtCodigo=(EditText)findViewById(R.id.txtCodTipoCiudadano);
+        txtTipoCiudadano = (EditText)findViewById(R.id.txtTipoCiudadano);
+
     }
 
     public void alta(View v) {
         AdminSQLiteHelper admin = new AdminSQLiteHelper(this,
                 "Usuarios", null, 1);
         SQLiteDatabase bd = admin.getWritableDatabase();
-        String tipo = et1.getText().toString();
+        String tipo = txtTipoCiudadano.getText().toString();
         ContentValues registro = new ContentValues();
         registro.put("tipo_ciudadano", tipo);
         bd.insert("tipo_ciudadano", null, registro);
         bd.close();
-        et1.setText("");
+        txtTipoCiudadano.setText("");
         Toast.makeText(this, "Se cargaron los datos del ciudadano",
                 Toast.LENGTH_SHORT).show();
     }
@@ -37,7 +42,7 @@ public class TCiudadano extends AppCompatActivity {
         AdminSQLiteHelper admin = new AdminSQLiteHelper(this,
                 "Usuarios", null, 1);
         SQLiteDatabase bd = admin.getWritableDatabase();
-        String tipo_ciudadano = et1.getText().toString();
+        String tipo_ciudadano = txtCodigo.getText().toString();
         Cursor fila = bd.rawQuery(
                 "select tipo_ciudadano from tipo_ciudadano where tipo_ciudadano =" + tipo_ciudadano, null);
         if (fila.moveToFirst()) {
@@ -52,10 +57,10 @@ public class TCiudadano extends AppCompatActivity {
         AdminSQLiteHelper admin = new AdminSQLiteHelper(this,
                 "Usuarios", null, 1);
         SQLiteDatabase bd = admin.getWritableDatabase();
-        String tipo= et1.getText().toString();
+        String tipo= txtCodigo.getText().toString();
         int cant = bd.delete("tipo_ciudadano", "tipo_ciudadano=" + tipo, null);
         bd.close();
-        et1.setText("");
+        txtCodigo.setText("");
         if (cant == 1)
             Toast.makeText(this, "Se borró ciudadano con dicho código",
                     Toast.LENGTH_SHORT).show();
@@ -68,7 +73,7 @@ public class TCiudadano extends AppCompatActivity {
         AdminSQLiteHelper admin = new AdminSQLiteHelper(this,
                 "Usuarios", null, 1);
         SQLiteDatabase bd = admin.getWritableDatabase();
-        String tipo = et1.getText().toString();
+        String tipo = txtCodigo.getText().toString();
         ContentValues registro = new ContentValues();
         registro.put("tipo_ciudadano", tipo);
         int cant = bd.update("tipo_ciudadano", registro, "tipo_ciudadano=" + tipo, null);

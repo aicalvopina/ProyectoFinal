@@ -7,10 +7,10 @@
     tools:context="ec.edu.espe.proyectofinal.Organizacion">
 
     <EditText
-        android:id="@+id/editText3"
+        android:id="@+id/txtNombreOrg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/editText2"
+        android:layout_below="@+id/txtRUC"
         android:layout_centerHorizontal="true"
         android:layout_marginEnd="92dp"
         android:layout_marginStart="77dp"
@@ -20,15 +20,15 @@
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText2" />
+        app:layout_constraintTop_toBottomOf="@+id/txtRUC" />
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/txtRUC"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/editText"
-        android:layout_alignRight="@+id/editText"
-        android:layout_below="@+id/editText"
+        android:layout_alignEnd="@+id/txtCodOrg"
+        android:layout_alignRight="@+id/txtCodOrg"
+        android:layout_below="@+id/txtCodOrg"
         android:layout_marginEnd="92dp"
         android:layout_marginStart="77dp"
         android:layout_marginTop="15dp"
@@ -37,7 +37,7 @@
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText" />
+        app:layout_constraintTop_toBottomOf="@+id/txtCodOrg" />
 
     <Button
         android:id="@+id/btnRegresar"
@@ -56,7 +56,7 @@
         tools:drawableBottom="@android:drawable/ic_menu_revert" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/txtCodOrg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -80,6 +80,7 @@
         android:layout_alignStart="@+id/button9"
         android:layout_marginStart="16dp"
         android:layout_marginTop="12dp"
+        android:onClick="modificacion"
         android:text="Modificar por codigo"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button12" />
@@ -90,23 +91,25 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_below="@+id/editText6"
+        android:layout_below="@+id/txtCodTipoOrg"
         android:layout_marginEnd="52dp"
         android:layout_marginTop="50dp"
-        android:text="Baja por codigo"
+        android:onClick="consultaporcodigo"
+        android:text="Busqueda por Codigo"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText6" />
+        app:layout_constraintTop_toBottomOf="@+id/txtCodTipoOrg" />
 
     <Button
         android:id="@+id/button12"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/editText6"
-        android:layout_alignBottom="@+id/editText6"
+        android:layout_alignBaseline="@+id/txtCodTipoOrg"
+        android:layout_alignBottom="@+id/txtCodTipoOrg"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_marginStart="16dp"
         android:layout_marginTop="12dp"
+        android:onClick="bajaporcodigo"
         android:text="Eliminar por Codigo"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button9" />
@@ -120,12 +123,13 @@
         android:layout_alignParentStart="true"
         android:layout_marginStart="16dp"
         android:layout_marginTop="50dp"
+        android:onClick="alta"
         android:text="Alta"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText6" />
+        app:layout_constraintTop_toBottomOf="@+id/txtCodTipoOrg" />
 
     <EditText
-        android:id="@+id/editText6"
+        android:id="@+id/txtCodTipoOrg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -139,7 +143,7 @@
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText3" />
+        app:layout_constraintTop_toBottomOf="@+id/txtNombreOrg" />
 
     <TextView
         android:id="@+id/textView2"

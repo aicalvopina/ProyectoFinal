@@ -16,7 +16,7 @@ public class Periodo extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_periodo);
-        et1=(EditText)findViewById(R.id.etFechas);
+        et1=(EditText)findViewById(R.id.txtFecha);
     }
     public void alta(View v) {
         AdminSQLiteHelper admin = new AdminSQLiteHelper(this,

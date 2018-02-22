@@ -16,7 +16,7 @@ public class TCompetencia extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tcompetencia);
-        et1=(EditText)findViewById(R.id.etTipoCompetencia);
+       // et1=(EditText)findViewById(R.id.etTipoCompetencia);
     }
 
     public void alta(View v) {

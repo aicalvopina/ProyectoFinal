@@ -45,16 +45,10 @@ public class AdminSQLiteHelper extends SQLiteOpenHelper {
             "FOREIGN KEY(cod_torganizacion) REFERENCES tipo_organizacion(cod_torganizacion))";
 
     String sqlCreate7 = "CREATE TABLE inscripcionCNE (" +
-            "codigo NOT NULL INTEGER PRIMARY KEY AUTOINCREMENT," +
-            "organizacion INTEGER," +
-            "representante INTEGER," +
-            "veedor INTEGER," +
-            "periodo INTEGER," +
-            "fecha TEXT," +
-            "FOREIGN KEY(organizacion) REFERENCES organizacion(cod_organizacion)," +
-            "FOREIGN KEY(representante) REFERENCES ciudadano(ciudadano)," +
-            "FOREIGN KEY(veedor) REFERENCES ciudadano(ciudadano)," +
-            "FOREIGN KEY(periodo) REFERENCES periodo(codigo_periodo))";
+            "codigo_inscripcion NOT NULL INTEGER PRIMARY KEY AUTOINCREMENT," +
+            "competencia INTEGER," +
+            "titulo INTEGER," +
+            "FOREIGN KEY(competencia) REFERENCES competencia(cod_competencia))";
 
     String sqlCreate8 = "CREATE TABLE periodo (" +
             "codigo_periodo NOT NULL INTEGER PRIMARY KEY AUTOINCREMENT," +
