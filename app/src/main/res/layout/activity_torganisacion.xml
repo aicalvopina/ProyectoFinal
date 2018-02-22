@@ -41,8 +41,8 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="55dp"
             android:ems="10"
-            android:inputType="textPersonName"
-            android:text="Name" />
+            android:hint="Tipo"
+            android:inputType="textPersonName" />
 
         <Button
             android:id="@+id/button13"
@@ -64,8 +64,8 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="56dp"
             android:ems="10"
-            android:inputType="textPersonName"
-            android:text="Name" />
+            android:hint="Codigo"
+            android:inputType="textPersonName" />
 
         <Button
             android:id="@+id/button14"
