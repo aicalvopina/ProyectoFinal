@@ -42,7 +42,7 @@ public class AdminSQLiteHelper extends SQLiteOpenHelper {
             "codigo_organizacion INTEGER PRIMARY KEY ," +
             "nombre TEXT," +
             "RUC  TEXT," +
-            "cod_torganizacion INTEGER))";
+            "cod_torganizacion INTEGER )";
 
     String sqlCreate7 = "CREATE TABLE inscripcionCNE (" +
             "codigo_inscripcion INTEGER PRIMARY KEY ," +
