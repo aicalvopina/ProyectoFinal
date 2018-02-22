@@ -15,24 +15,29 @@ import java.io.IOException;
 import java.io.OutputStreamWriter;
 
 public class TOrganizacion extends AppCompatActivity {
-    private EditText et1;
+    private EditText et1,et2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_torganisacion);
-        //et1 = (EditText) findViewById(R.id.txtCodTipo);
+        et1 = (EditText) findViewById(R.id.etCodigo);
+        et2 = (EditText) findViewById(R.id.etTipo);
+
     }
 
     public void alta(View v) {
         AdminSQLiteHelper admin = new AdminSQLiteHelper(this,
                 "Usuarios", null, 1);
         SQLiteDatabase bd = admin.getWritableDatabase();
-        String tipo = et1.getText().toString();
+        String tipo = et2.getText().toString();
+        String codigo = et1.getText().toString();
         ContentValues registro = new ContentValues();
+        registro.put("codigo_torganizacion", Integer.parseInt(codigo));
         registro.put("tipo_organizacion", tipo);
         bd.insert("tipo_organizacion", null, registro);
         bd.close();
         et1.setText("");
+        et2.setText("");
         try {
             OutputStreamWriter archivo = new OutputStreamWriter(openFileOutput(
                     "TipoOrganizacion.txt", Activity.MODE_APPEND));
@@ -50,11 +55,12 @@ public class TOrganizacion extends AppCompatActivity {
         AdminSQLiteHelper admin = new AdminSQLiteHelper(this,
                 "Usuarios", null, 1);
         SQLiteDatabase bd = admin.getWritableDatabase();
-        String tipo = et1.getText().toString();
+        String codigo = et1.getText().toString();
         Cursor fila = bd.rawQuery(
-                "select tipo_organizacion from tipo_organizacion where tipo_organizacion =" + tipo, null);
+                "select codigo_torganizacion,tipo_organizacion from tipo_organizacion where codigo_torganizacion =" + Integer.parseInt(codigo), null);
         if (fila.moveToFirst()) {
-
+            et1.setText(fila.getString(0));
+            et2.setText(fila.getString(1));
         } else
             Toast.makeText(this, "No existe ",
                     Toast.LENGTH_SHORT).show();
@@ -65,10 +71,11 @@ public class TOrganizacion extends AppCompatActivity {
         AdminSQLiteHelper admin = new AdminSQLiteHelper(this,
                 "Usuarios", null, 1);
         SQLiteDatabase bd = admin.getWritableDatabase();
-        String tipo= et1.getText().toString();
-        int cant = bd.delete("tipo_organizacion", "tipo_organizacion=" + tipo, null);
+        String codigo = et1.getText().toString();
+        int cant = bd.delete("tipo_organizacion", "cod_torganizacion=" + Integer.parseInt(codigo), null);
         bd.close();
         et1.setText("");
+        et2.setText("");
         if (cant == 1)
             Toast.makeText(this, "Se borró",
                     Toast.LENGTH_SHORT).show();
@@ -81,10 +88,12 @@ public class TOrganizacion extends AppCompatActivity {
         AdminSQLiteHelper admin = new AdminSQLiteHelper(this,
                 "Usuarios", null, 1);
         SQLiteDatabase bd = admin.getWritableDatabase();
-        String tipo = et1.getText().toString();
+        String tipo = et2.getText().toString();
+        String codigo = et1.getText().toString();
         ContentValues registro = new ContentValues();
+        registro.put("codigo_torganizacion", Integer.parseInt(codigo));
         registro.put("tipo_organizacion", tipo);
-        int cant = bd.update("tipo_organizacion", registro, "tipo_organizacion=" + tipo, null);
+        int cant = bd.update("tipo_organizacion", registro, "cod_torganizacion=" + Integer.parseInt(codigo), null);
         bd.close();
         if (cant == 1)
             Toast.makeText(this, "se modificaron los datos", Toast.LENGTH_SHORT)
@@ -96,8 +105,7 @@ public class TOrganizacion extends AppCompatActivity {
 
     public void regresar(View view)
     {
-        Intent i = new Intent(this,MainActivity.class);
-        startActivity(i);
+
         finish();
     }
 }

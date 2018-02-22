@@ -10,8 +10,8 @@
         android:id="@+id/button14"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/editText4"
-        android:layout_alignRight="@+id/editText4"
+        android:layout_alignEnd="@+id/etTipo"
+        android:layout_alignRight="@+id/etTipo"
         android:layout_alignTop="@+id/button13"
         android:layout_marginStart="16dp"
         android:layout_marginTop="25dp"
@@ -41,7 +41,7 @@
         android:layout_marginTop="48dp"
         android:text="Busqueda por Codigo"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText4" />
+        app:layout_constraintTop_toBottomOf="@+id/etTipo" />
 
     <Button
         android:id="@+id/btnRegresar"
@@ -67,11 +67,11 @@
         android:layout_alignParentStart="true"
         android:layout_marginTop="48dp"
         android:text="Alta"
-        app:layout_constraintTop_toBottomOf="@+id/editText4"
+        app:layout_constraintTop_toBottomOf="@+id/etTipo"
         tools:layout_editor_absoluteX="16dp" />
 
     <EditText
-        android:id="@+id/editText5"
+        android:id="@+id/etCodigo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/txt"
@@ -100,10 +100,10 @@
         app:layout_constraintTop_toBottomOf="@+id/button14" />
 
     <EditText
-        android:id="@+id/editText4"
+        android:id="@+id/etTipo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/editText5"
+        android:layout_below="@+id/etCodigo"
         android:layout_centerHorizontal="true"
         android:layout_marginEnd="84dp"
         android:layout_marginStart="85dp"
@@ -113,6 +113,6 @@
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText5" />
+        app:layout_constraintTop_toBottomOf="@+id/etCodigo" />
 
 </android.support.constraint.ConstraintLayout>
