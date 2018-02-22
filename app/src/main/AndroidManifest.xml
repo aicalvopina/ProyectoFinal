@@ -17,12 +17,12 @@
             </intent-filter>
         </activity>
         <activity android:name=".TCiudadano" />
-        <activity android:name=".Cuidadano" />
+        <activity android:name=".Ciudadano" />
         <activity android:name=".TCompetencia" />
         <activity android:name=".Competencia" />
-        <activity android:name=".TOrganisacion" />
+        <activity android:name=".TOrganizacion" />
         <activity android:name=".Organizacion" />
-        <activity android:name=".IncripcionCNE" />
+        <activity android:name=".InscripcionCNE" />
         <activity android:name=".Periodo" />
         <activity android:name=".Explorador"></activity>
     </application>

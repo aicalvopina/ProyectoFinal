@@ -4,23 +4,27 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 
 
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-public class MainActivity extends AppCompatActivity {
-    Intent i;
+    Button btnCiudadano;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        btnCiudadano = (Button)findViewById(R.id.button7);
+        btnCiudadano.setOnClickListener(this);
     }
 
     public void ciudadano(View view) {
-        i = new Intent(this, Ciudadano.class);
+        Intent i = new Intent(MainActivity.this, Ciudadano.class);
         startActivity(i);
     }
     public void tciudadano(View view) {
-         i = new Intent(this, TCiudadano.class);
+        Intent  i = new Intent(this, TCiudadano.class);
         startActivity(i);
     }
     public void competencia(View view)
@@ -56,7 +60,12 @@ public class MainActivity extends AppCompatActivity {
         startActivity(i);
     }
     public void explorador(View view) {
-        i = new Intent(this, Explorador.class);
+        Intent i = new Intent(this, Explorador.class);
         startActivity(i);
+    }
+
+    @Override
+    public void onClick(View v) {
+        ciudadano(v);
     }
 }
