@@ -10,9 +10,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class AdminSQLiteHelper extends SQLiteOpenHelper {
 
-    String sqlCreate1 = "CREATE TABLE tipo_ciudadano (" +
-            "cod_tciudadano NOT NULL INTEGER PRIMARY KEY AUTOINCREMENT, " +
-            "tipo_ciudadano TEXT)";
+    String sqlCreate1 = "CREATE TABLE tipo_ciudadano ( cod_tciudadano INTEGER , tipo_ciudadano TEXT)";
 
     String sqlCreate2 = "CREATE TABLE ciudadano (" +
             "codigo_ciudadano NOT NULL INTEGER PRIMARY KEY AUTOINCREMENT," +
@@ -20,8 +18,7 @@ public class AdminSQLiteHelper extends SQLiteOpenHelper {
             "cod_tciudadano INTEGER, " +
             "nombres TEXT," +
             "apellidos TEXT, " +
-            "nacionalidad TEXT," +
-            "FOREIGN KEY(cod_tciudadano) REFERENCES tipo_ciudadano(cod_tciudadano) )";
+            "nacionalidad TEXT)";
 
     String sqlCreate3=  "CREATE TABLE tipo_competencia (" +
             "cod_tcompetencia NOT NULL INTEGER PRIMARY KEY AUTOINCREMENT, " +
@@ -74,7 +71,14 @@ public class AdminSQLiteHelper extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
         //Se elimina la versión anterior de la tabla
-        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS Usuarios");
+        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS tipo_ciudadano");
+        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS ciudadano");
+        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS tipo_organizacion");
+        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS organizacion");
+        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS tipo_competencia");
+        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS competencia");
+        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS periodo");
+        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS inscripcionCNE");
 
         //Se crea la nueva versión de laS tablaS
         sqLiteDatabase.execSQL(sqlCreate1);

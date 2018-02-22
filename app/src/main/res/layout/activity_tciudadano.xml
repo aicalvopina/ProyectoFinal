@@ -32,7 +32,7 @@
         tools:drawableBottom="@android:drawable/ic_menu_revert" />
 
     <EditText
-        android:id="@+id/txtCodTipoCiudadano"
+        android:id="@+id/txtCodTipoCiudadano1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="94dp"
@@ -46,7 +46,7 @@
         app:layout_constraintTop_toBottomOf="@+id/txt" />
 
     <EditText
-        android:id="@+id/txtTipoCiudadano"
+        android:id="@+id/txtTipoCiudadano1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="94dp"
@@ -57,7 +57,7 @@
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtCodTipoCiudadano" />
+        app:layout_constraintTop_toBottomOf="@+id/txtCodTipoCiudadano1" />
 
     <Button
         android:id="@+id/button21"
@@ -68,7 +68,7 @@
         android:onClick="alta"
         android:text="Alta"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtTipoCiudadano" />
+        app:layout_constraintTop_toBottomOf="@+id/txtTipoCiudadano1" />
 
     <Button
         android:id="@+id/button22"
@@ -101,6 +101,6 @@
         android:onClick="consultaporcodigo"
         android:text="Busqueda por codigo"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtTipoCiudadano" />
+        app:layout_constraintTop_toBottomOf="@+id/txtTipoCiudadano1" />
 
 </android.support.constraint.ConstraintLayout>

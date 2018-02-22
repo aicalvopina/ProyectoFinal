@@ -1,6 +1,5 @@
 package ec.edu.espe.proyectofinal;
 
-import android.app.Activity;
 import android.content.ContentValues;
 import android.content.Intent;
 import android.database.Cursor;
@@ -11,34 +10,33 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import java.io.IOException;
-import java.io.OutputStreamWriter;
-
 public class TCiudadano extends AppCompatActivity {
     private EditText txtCodigo;
     private EditText txtTipoCiudadano;
-
+    AdminSQLiteHelper admin;
+    SQLiteDatabase bd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tciudadano);
-        txtCodigo=(EditText)findViewById(R.id.txtCodTipoCiudadano);
-        txtTipoCiudadano = (EditText)findViewById(R.id.txtTipoCiudadano);
+        txtCodigo=(EditText)findViewById(R.id.txtCodTipoCiudadano1);
+        txtTipoCiudadano = (EditText)findViewById(R.id.txtTipoCiudadano1);
 
     }
 
     public void alta(View v) {
-        AdminSQLiteHelper admin = new AdminSQLiteHelper(this,
-                "Usuarios", null, 1);
-        SQLiteDatabase bd = admin.getWritableDatabase();
+        admin = new AdminSQLiteHelper(this,"Usuarios", null, 1);
+        bd = admin.getWritableDatabase();
         String tipo = txtTipoCiudadano.getText().toString();
-        ContentValues registro = new ContentValues();
+        int codigo = Integer.getInteger(txtCodigo.getText().toString());
+        /*ContentValues registro = new ContentValues();
         registro.put("tipo_ciudadano", tipo);
-        bd.insert("tipo_ciudadano", null, registro);
+       bd.insert("tipo_ciudadano", null, registro);*/
+        bd.execSQL("INSERT INTO tipo_ciudadano (cod_tciudadano,tipo_ciudadano ) VALUES ("+ codigo +",'"+txtTipoCiudadano.getText().toString()+"')");
         bd.close();
         txtTipoCiudadano.setText("");
-        try {
+        /*try {
             OutputStreamWriter archivo = new OutputStreamWriter(openFileOutput(
                     "TipoCiudadano.txt", Activity.MODE_APPEND));
             archivo.append("Tipo:"+tipo);
@@ -46,7 +44,7 @@ public class TCiudadano extends AppCompatActivity {
             archivo.flush();
             archivo.close();
         } catch (IOException e) {
-        }
+        }*/
         Toast.makeText(this, "Se cargaron los datos del ciudadano",
                 Toast.LENGTH_SHORT).show();
     }

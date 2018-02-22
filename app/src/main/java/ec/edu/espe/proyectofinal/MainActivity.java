@@ -55,5 +55,8 @@ public class MainActivity extends AppCompatActivity {
         Intent i = new Intent(this,Periodo.class);
         startActivity(i);
     }
-
+    public void explorador(View view) {
+        i = new Intent(this, Explorador.class);
+        startActivity(i);
+    }
 }
