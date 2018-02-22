@@ -9,7 +9,7 @@
     <EditText
         android:id="@+id/txtArchivos"
         android:layout_width="333dp"
-        android:layout_height="388dp"
+        android:layout_height="352dp"
         android:layout_marginBottom="30dp"
         android:layout_marginTop="10dp"
         android:ems="10"
@@ -27,4 +27,15 @@
         android:textAlignment="center"
         tools:layout_editor_absoluteX="6dp"
         tools:layout_editor_absoluteY="7dp" />
+
+    <Button
+        android:id="@+id/button29"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="7dp"
+        android:layout_marginStart="6dp"
+        android:onClick="recuperar"
+        android:text="Recuperar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 </android.support.constraint.ConstraintLayout>

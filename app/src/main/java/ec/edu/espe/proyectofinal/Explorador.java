@@ -25,6 +25,8 @@ public class Explorador extends AppCompatActivity   {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_explorador);
         txtMulti = (EditText) findViewById(R.id.txtArchivos);
+
+
     }
 
     public void recuperar(View view){
