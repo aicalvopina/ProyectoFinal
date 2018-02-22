@@ -14,7 +14,7 @@ public class AdminSQLiteHelper extends SQLiteOpenHelper {
 
 
     String sqlCreate1 = "CREATE TABLE tipo_ciudadano (" +
-            "cod_tciudadano NOT NULL INTEGER PRIMARY KEY AUTOINCREMENT, " +
+            "cod_tciudadano INTEGER PRIMARY KEY, " +
             "tipo_ciudadano TEXT)";
 
     String sqlCreate2 = "CREATE TABLE ciudadano (" +
