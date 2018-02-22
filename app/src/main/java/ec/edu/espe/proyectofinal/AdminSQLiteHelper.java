@@ -23,8 +23,7 @@ public class AdminSQLiteHelper extends SQLiteOpenHelper {
             "cod_tciudadano INTEGER, " +
             "nombres TEXT," +
             "apellidos TEXT, " +
-            "nacionalidad TEXT," +
-            "FOREIGN KEY(cod_tciudadano) REFERENCES tipo_ciudadano(cod_tciudadano) )";
+            "nacionalidad TEXT)";
 
     String sqlCreate3=  "CREATE TABLE tipo_competencia (" +
             "cod_tcompetencia INTEGER PRIMARY KEY , " +
@@ -33,8 +32,7 @@ public class AdminSQLiteHelper extends SQLiteOpenHelper {
     String sqlCreate4 = "CREATE TABLE competencia (" +
             "codigo INTEGER PRIMARY KEY, " +
             "cod_tcompetencia  INTEGER," +
-            "titulo TEXT, " +
-            "FOREIGN KEY(cod_tciudadano) REFERENCES tipo_competencia(cod_tcompetencia) )";
+            "titulo TEXT )";
 
     String sqlCreate5 = "CREATE TABLE tipo_organizacion (" +
             "codigo_torganizacion INTEGER PRIMARY KEY ," +
@@ -44,14 +42,12 @@ public class AdminSQLiteHelper extends SQLiteOpenHelper {
             "codigo_organizacion INTEGER PRIMARY KEY ," +
             "nombre TEXT," +
             "RUC  TEXT," +
-            "cod_torganizacion INTEGER," +
-            "FOREIGN KEY(cod_torganizacion) REFERENCES tipo_organizacion(cod_torganizacion))";
+            "cod_torganizacion INTEGER))";
 
     String sqlCreate7 = "CREATE TABLE inscripcionCNE (" +
             "codigo_inscripcion INTEGER PRIMARY KEY ," +
             "competencia INTEGER," +
-            "titulo INTEGER," +
-            "FOREIGN KEY(competencia) REFERENCES competencia(cod_competencia))";
+            "titulo INTEGER)";
 
     String sqlCreate8 = "CREATE TABLE periodo (" +
             "codigo_periodo INTEGER PRIMARY KEY ," +
